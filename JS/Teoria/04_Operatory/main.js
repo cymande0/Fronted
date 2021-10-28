@@ -75,7 +75,8 @@ newPosition += position; // pobiera wartość newPosition i dodaje do niej warto
 // logiczne zaprzecznie (negacja). Robi dwie rzeczy:  1. zamienia na typ boolean 2. odwraca wartość (jeśli było true, to jest false i odwrotnie)
 !("coś"); //zwraca false, ponieważ najpier konwertuje na typ boolean i wartość true, a potem zamienia ją na false. Nawias nie jest konieczny, bo nie jest to wyrażenie a wartość
 !(2 - 2); //negacja, nawias jest konieczny bo oznacza on by najpierw zostało wykonane wyrażenie w środku (2 - 2 czyli operator odejmowania, który da wynik 0), a potem dopiero negacja czyli zero zamieniamy na typ boolean flase a ten typ boolean na true (tak więc operator zwróci true) 
-!!200; //podwójna negacja. Robi to co pojedyńćza (zmiena na typ boolean i odwraca), ale dodatkowo ponoweni odwraca, więć mamy rzeczywis wartość. 200 jest typu true więc tutaj będzie zwrócone true.
+!!200; //podwójna negacja. Robi to co pojedyńćza (zmiena na typ boolean i odwraca), ale dodatkowo ponoweni odwraca, więć mamy rzeczywis wartość. 
+// 200 jest typu true więc tutaj będzie zwrócone true.
 
 // SUMA logiczna (logiczne "lub")
 //Jeśli choć jeden operand zwraca true, to wyrażenie możemy uznać za prawdziwe. Żeby jednak to dobrze zrozumieć musimy poznać mechanizm zwracania wartości. W przypadku gdy pierwsza wartość jest prawdziwa jest ona zwracana. W przypadku gdy nie jest prawdziwa zwracana jest druga.
@@ -87,7 +88,11 @@ false || false; //zwraca drugą wartość false
 0 || null // obie wartości są nieprawdziwe. Ponieważ pierwsza jest nieprawdziwa zwracana jest druga czyli null (która stanowi false po zamiania na wartość logiczną)
 
 // ILOCZYN logiczny (logiczne "i")
-//Obie wartości (wyrażenia) muszą być uznane za prawdziwe by iloczyn logiuczny był uznany za prawdziwy. Tu również musimy jednak zrozumieć mechanizm zwracania. W przypadku gdy pierwszy argument (po lewje) jest nieprawdziwy, kończy to działania operatora i zwracana jest pierwsza wartość. Jeśli pierwsza wartość jest true (czy po konwersji na typ boolean, bo ta się wykonuje), to operator sprawdza wartość (wyrażenie) po prawej stronie i zwraca je. Ta zwrócona wartość decyduje czy logiczne "i" (czyli iloczyn logiczny) zwraca wartość true/false (czy inną wartość, któa po konwersji zwróci true/false)
+//Obie wartości (wyrażenia) muszą być uznane za prawdziwe by iloczyn logiuczny był uznany za prawdziwy. Tu również musimy jednak zrozumieć mechanizm 
+//zwracania. W przypadku gdy pierwszy argument (po lewje) jest nieprawdziwy, kończy to działania operatora i zwracana jest pierwsza wartość. 
+//Jeśli pierwsza wartość jest true (czy po konwersji na typ boolean, bo ta się wykonuje), to operator sprawdza wartość (wyrażenie) po prawej stronie 
+//i zwraca je. Ta zwrócona wartość decyduje czy logiczne "i" (czyli iloczyn logiczny) zwraca wartość true/false (czy inną wartość, któa po konwersji 
+//zwróci true/false)
 true && false; //Pierwszy warunek jest true, operator przechodzi do drugiego i zwraca false
 200 && 0; // podobnie jak wyzej. 200 zamieniane jest (konwersja) na true. Zwracane jest 0 (czyli po konwersji false)
 "1" && "2"; //oba warunki prawdziwe, zwracane jest "2" czyli string, któy po konwersji na typ boolean jest true

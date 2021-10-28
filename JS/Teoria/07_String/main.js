@@ -126,4 +126,4 @@ String(1000000) //"1000000"
 //- String z jakimś znakiem(znakami) w środku jest zamieniany na true 
 Boolean() //konwersja na wartość typu Boolean. Funkcja Boolean działa podobnie jak poznane już String i Number (tylko zmienia na inny typ)
 // console.log(Boolean(emptyString)) //false
-// console.log(Boolean(emptyObjectString)) //true
+// console.log(Boolean(emptyObjectString)) //true 
