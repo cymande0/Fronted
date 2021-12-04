@@ -4,11 +4,11 @@ const btn = document.querySelector("button");
 const li = document.querySelectorAll("li");
 let size = 10;
 
-function initial() {
-    for(let i = 0; i < li.length; i++){
-        li[i].style.fontSize = `${size}px`;
-    }
-}
+// function initial() {
+//     for(let i = 0; i < li.length; i++){
+//         li[i].style.fontSize = `${size}px`;
+//     }
+// }
 
 function changeSizeOfLi (){
     size++;
@@ -23,5 +23,5 @@ function changeSizeOfLi (){
     // }
 }
 
-initial()
+// initial()
 btn.addEventListener("click", changeSizeOfLi)
