@@ -12,10 +12,11 @@ function showAllArguments(...items) {
 
 function addAllWords(...words) {
  let txt = "";
- // for (let i = 0; i < words.length; i++) {
- //  // txt += words[i] + "-";
- //  txt += `${words[i]}-`;
- // }
+ for (let i = 0; i < words.length; i++) {
+  // txt += words[i] + "-";
+  txt += `${words[i]}-`;
+ }
+}
 
  // words.forEach(function(word) {
  //  // txt += word + "-";
