@@ -15,13 +15,7 @@ window.addEventListener("scroll", function () {
     // size = size + 10;
 
 
-    if (size >= window.innerWidth / 2) {
-        grow = !grow;
-    }
-    else if (size <= 0) {
-        grow = !grow;
-    }
-
+   
     if (grow) {
         size += 5
         squere.style.width = size + "px";
@@ -33,6 +27,5 @@ window.addEventListener("scroll", function () {
         squere.style.width = size + "px";
         squere.style.height = size + "px";
     }
-
 
 })

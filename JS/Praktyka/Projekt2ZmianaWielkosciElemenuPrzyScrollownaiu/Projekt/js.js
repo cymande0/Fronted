@@ -1,3 +1,4 @@
+
 document.body.style.height = "1000vh";
 let size = 0;
 let grow = true;
