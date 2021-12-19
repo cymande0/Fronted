@@ -21,8 +21,12 @@ const changeColor = (e) => {
   // }
 
   switch (e.keyCode) {
-    case 38 && red >= 0: red -= 1;
-    case 40 && red <= 254: red += 1;
+    case 38:
+       red -= 1;
+       break
+    case 40:
+       red += 1;
+       break
   }
 
   document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
