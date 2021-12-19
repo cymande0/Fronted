@@ -19,6 +19,7 @@ const generateCode = () => {
     }
 }
 
+
 btn.addEventListener("click", generateCode);
 
 
