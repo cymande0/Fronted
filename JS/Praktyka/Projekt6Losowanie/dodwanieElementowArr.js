@@ -17,7 +17,6 @@ const addInput = (e) => {
             }
         }
     }
-
     names.push(input);
     div.textContent += input + ", ";
     userInput.value = "";
