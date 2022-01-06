@@ -30,6 +30,17 @@
 
 // // Implementacje
 
+
+// 1. Klawisz <- (stzałka w lewo) przesuwa w lewo (cofa) slider
+// 2. Klawisz -> (stzałka w lewo) przesuwa w prawo slider (do przod, czyli tak jak przy funkcji changeSlide) 
+// lewa strzałka: keyCode = 37
+// prawy strzałka: keyCode = 39
+// 3. (strzałki) wstrzymuje setInterval, a po zmianie slajdu uruchamiają go ponownie (czas ma się liczyć ponownie)
+
+// Projekt tutaj (przetestuj działajanie strzałek na klawiaturze)
+// https://websamuraj.pl/examples/js/projekt9/
+
+
 const slideList = [{
     img: "images/img1.jpg",
     text: "Tekst 1"
@@ -48,38 +59,61 @@ h1 = document.querySelector("h1.slider");
 img = document.querySelector("img.slider");
 dots = [...document.querySelectorAll(".dots span")];
 
-index = 0;
+const intervalTime = 1000;
+let index = 0;
+let intervalIndex;
 
-const changeDot = () => {
+const changeDot = (move) => {
+
     const currentDot = dots.findIndex(dot => dot.classList.contains("active"));
     dots[currentDot].classList.remove("active");
+    
+    if(move === "left") {
+        if(currentDot == 0) index = 2;
+        else index = currentDot - 1;
+        intervalIndex = setInterval(changeSlide, intervalTime);
+    } else if (move === "right") {
+        if(currentDot === 2) index = 0;
+        else index = currentDot + 1;
+        intervalIndex = setInterval(changeSlide, intervalTime);
+    }
+
+    h1.textContent = slideList[index].text;
+    img.src = slideList[index].img;
     dots[index].classList.add("active");
 }
 
-const checkKey = (e) => {
-    console.log(e.keyCode);
-    // if(e.keyCode === '38') {
-    //     console.log("UP");
-    // }
+const resetInterval = () => {
+    clearInterval(intervalIndex);
 }
 
 const changeSlide = () =>  {
-    // dots[index].classList.remove("active");
+
     index++;
+    
     if(index === slideList.length) {
         index = 0;
-    }
-    
-    console.log(index);
+    }    
     h1.textContent = slideList[index].text;
     img.src = slideList[index].img;
-    checkKey();
     changeDot();
     // dots[index].classList.add("active");
 }
 
-changeSlide();
+const keyChangeSlide = (e) => {
+    e.preventDefault();
+    const key = e.keyCode;
+    resetInterval();
+    switch(key) {
+        case 37:
+            changeDot("left");     
+            break;
+        case 39:
+            changeDot("right");
+            break;
+    }
+}
 
-
-
-// setInterval(changeSlide, 1000);
+// utwórz funkcje keyChangeSlide. Zadanie może wymagać także zmian poza funkcją.
+window.addEventListener("keydown", keyChangeSlide);
+intervalIndex = setInterval(changeSlide, intervalTime);
