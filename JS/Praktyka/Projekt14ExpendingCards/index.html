@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            /* margin: 0; */
+        }
+
+        body {
+            height: 100vh;
+            font-family: 'Roboto', 'sans-serif';
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+        }
+
+        .container {
+            display: flex;
+            width: 90vw;
+        }
+
+        .panel {
+            background-size: auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+            flex: 0.5;
+            position: relative;
+            transition: flex 0.7s ease-in;
+        }
+
+        .panel h3 {
+            position: absolute;
+            font-size: 24px;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;
+        }
+
+        .panel.active {
+            flex: 5;
+        }
+
+        .panel.active h3 {
+            opacity: 1;
+        }
+
+
+        .panel:nth-child(1) {
+            background-image: url('https://www.polska.travel/images/pl-PL/glowne-miasta/krakow/krakow_rynek_noca_1170.jpg');
+        }
+
+        .panel:nth-child(2) {
+            background-image: url('https://www.polska.travel/images/pl-PL/glowne-miasta/wroclaw/wroclaw_panorama_1170.jpg');
+        }
+
+        .panel:nth-child(3) {
+            background-image: url('https://www.kiwi.com/stories/wp-content/uploads/2021/10/hack-the-city-warsaw_some.jpg');
+        }
+
+        .panel:nth-child(4) {
+            background-image: url('https://cw-gbl-gws-prod.azureedge.net/-/media/cw/emea/poland/offices/warsaw-750x480-2.jpg?rev=33ecb76489234be58592473beab33100');
+        }
+
+        .panel:nth-child(4) {
+            background-image: url('https://www.polska.travel/images/pl-PL/glowne-miasta/gdansk/gdansk_motlawa_1170.jpg');
+        }
+
+        .panel:nth-child(5) {
+            background-image: url('https://u.profitroom.pl/2019-hotelaltus-pl/thumb/1920x1080/uploads/Photogenica-PHX245021854.jpg');
+        }
+
+        @media(max-width: 480px) {
+            .container {
+                width: 100vw;
+            }
+
+            .panel:nth-of-type(4),
+            .panel:nth-of-type(5) {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel active">
+            <h3>Explore Krakow</h3>
+        </div>
+        <div class="panel">
+            <h3>Explore Wroclaw</h3>
+        </div>
+        <div class="panel">
+            <h3>Explore Warsaw</h3>
+        </div>
+        <div class="panel">
+            <h3>Explore Gdansk</h3>
+        </div>
+        <div class="panel">
+            <h3>Explore Poznan</h3>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
