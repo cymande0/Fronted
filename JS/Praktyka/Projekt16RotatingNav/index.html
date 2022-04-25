@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto';
+            background-color: #333;
+            color: #222;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fafafa;
+            transform-origin: top left;
+            transition: transform 0.5s linear;
+            width: 100svw;
+            min-height: 100vh;
+            padding: 50px;
+        }
+
+        .container.show-nav {
+            transform: rotate(-20deg);
+
+        }
+
+        .circle-container {
+            position: fixed;
+            top: -100px;
+            left: -100px;
+        }
+
+
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            background: transparent;
+            border: 0;
+            font-size: 26px;
+            color: #fff;
+        }
+
+        .circle {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: rgb(206, 146, 36);
+            transition: transform 0.5s linear;
+        }
+
+        .container.show-nav .circle {
+            transform: rotate(-70deg);
+        }
+
+        .circle button:focus {
+            outline: none;
+        }
+
+        .circle button#open {
+            left: 60%;
+        }
+
+        .circle button#close {
+            top: 60%;
+            transform: rotate(90deg);
+            transform-origin: top left;
+        }
+
+        .container.show-nav+nav li {
+            transform: translateX(0);
+            transition-delay: 0.3s;
+        }
+
+        nav {
+            position: fixed;
+            bottom: 40px;
+            left: 0;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        nav ul li {
+            text-transform: uppercase;
+            color: #fff;
+            margin: 20px 0;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease-in;
+        }
+
+        nav ul li i {
+            font-size: 10px;
+            margin-right: 10px;
+        }
+
+        nav ul li+li {
+            margin-left: 15px;
+            transform: translate(-150%);
+        }
+
+        nav ul li+li+li {
+            margin-left: 30px;
+            transform: translateX(-200%);
+        }
+
+        .content img {
+            max-width: 100%;
+        }
+
+        .content {
+            min-width: 300px;
+            margin: 50px auto;
+        }
+
+        .content h1 {
+            margin: 0;
+        }
+
+        .content small {
+            color: #555;
+            font-style: italic;
+        }
+
+        .content p {
+            color: #333;
+            line-height: 1.5;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Amazing Article</h1>
+            <small>Florian Pop</small>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed corporis animi voluptas aliquid sunt
+                obcaecati odio, ipsam, velit vero quasi dicta explicabo. Officia suscipit quaerat vel, molestias
+                doloribus harum earum, ipsum consequuntur, cumque ex voluptates repellat ipsa? Ab non sunt ad debitis
+                delectus facilis, ipsum, eligendi maxime beatae et doloremque eius iure illo odio natus neque?
+                Reiciendis dolorum sint quis molestias distinctio itaque nesciunt sequi ullam eaque odio qui obcaecati,
+                magni delectus porro aliquid autem officia consequatur vel. Perspiciatis est quae beatae mollitia,
+                veniam aut delectus at. Cumque eius at illum labore quod doloremque soluta. Earum voluptatibus adipisci
+                sed corporis?</p>
+
+            <h3>Krakow</h3>
+            <img src="https://all.accor.com/magazine/imagerie/eko-krakow_2-8bfe.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium perferendis aspernatur culpa modi
+                laboriosam, iste tempora rem consequuntur accusantium facere doloremque cumque facilis exercitationem
+                quibusdam quos. Similique vel magnam qui sunt, assumenda asperiores non impedit ipsum architecto
+                corrupti maxime recusandae expedita aliquid error. Accusantium molestiae distinctio tenetur perspiciatis
+                laudantium est!</p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><i class="fas fa-home">Home</i></li>
+            <li><i class="fas fa-user-alt">About</i></li>
+            <li><i class="fas fa-envelope">Contact</i></li>
+        </ul>
+    </nav>
+    <script src="./index.js"></script>
+</body>
+
+</html>
